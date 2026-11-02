@@ -14,6 +14,11 @@
 - 영상 분석은 **watch 스킬**(`/watch`, 플러그인 `watch@claude-video`)을 쓴다. 엔진은 local, 상세도 balanced, 음성 인식 fallback 없음(자막만).
 - 세션 시작 시 `scripts/setup-env.sh`가 yt-dlp·ffmpeg·watch 설정을 자동으로 준비한다. watch가 "setup" 질문을 하면 위 설정으로 진행하고 사용자에게 다시 묻지 않는다.
 - 유튜브가 "봇 확인(Sign in to confirm you're not a bot)" 등으로 막으면: 쿠키를 쓰지 말고, 사용자에게 해당 영상을 내려받아 `inbox/`에 올려 달라고 안내한다. 분석이 끝나면 `inbox/`의 영상 파일은 지운다(리포를 가볍게 유지).
+- 봇 확인으로 막혀도 제목은 `curl "https://www.youtube.com/oembed?url=<링크>&format=json"`으로 확인 가능(비공개·퍼가기 제한 영상은 Unauthorized).
+- GitHub 웹 업로드는 파일당 25MB 제한 → 큰 영상은 대화창에 직접 첨부(`/root/.claude/uploads/`에 생김)하거나 720p로 받아 달라고 안내.
+- 사용자가 웹으로 올린 파일은 **main**의 `inbox/`에 들어간다 → `git fetch origin main && git merge origin/main`으로 작업 브랜치에 가져온 뒤 분석하고, 삭제도 작업 브랜치에서 한다.
+- watch 플러그인이 세션에 없으면(`~/.claude/plugins/installed_plugins.json`이 비어 있음) ffmpeg로 대신한다: `fps=1,scale=240:-1,drawtext=...%{pts\:hms}...,tile=8x5`로 시간 표시 모아보기 → 컷 판단, `select='gt(scene,0.3)',showinfo`로 컷 경계, `-af ebur128`로 소리 크기 흐름.
+- 세로 쇼츠 안에 가로 영상 띠가 있는 경우 캡처는 그 띠만 `crop`해서 저장한다.
 
 ## 폴더 규칙
 새 작업은 `projects/_template/`을 복사해 `projects/YYYY-MM_프로젝트명/`으로 시작한다.
@@ -53,6 +58,9 @@ projects/YYYY-MM_프로젝트명/
 - 참고 컷 칸에는 패턴의 출처가 된 레퍼런스 캡처 썸네일을 넣는다.
 - 엑셀은 같은 열 구성에 참고 컷 이미지를 셀에 삽입하고, 열 너비·줄바꿈을 검토하기 좋게 맞춘다.
 - 시간 합계가 brief의 목표 길이와 맞는지 확인한다.
+- md와 xlsx는 프로젝트의 `storyboard_build.py`(씬 데이터 한 곳 → 두 파일 생성, 시간 합계 assert)로 만든다. 새 프로젝트는 이 스크립트를 복사해 `SCENES`만 바꾼다.
+- 소스를 생성형 AI로 만드는 프로젝트는 표 끝에 "AI 프롬프트(영문)" 열을 추가하고, 의상·톤 공통 문구는 brief의 `[OUTFIT]`·`[STYLE]`로 한 곳에서 관리한다.
+- Claude는 이미지 생성을 못 한다. 스토리보드 그림은 사용자가 프롬프트로 만들어 올리면 끼워 넣는다.
 
 ## 마무리
 각 단계가 끝날 때마다 커밋·푸시해 다른 PC나 폰에서 이어갈 수 있게 한다.
