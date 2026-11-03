@@ -32,7 +32,8 @@
 - `[GROOM]` (인물 고정): `a Korean man in his early 30s with short, neat dark brown hair and a slim build`
 - `[OUTFIT]` (본식 의상 확정): `a black three-piece suit with notch lapels and a matching black vest, crisp white dress shirt, black bow tie, a white flower boutonniere on the left lapel, polished black lace-up shoes`
 - `[STADIUM]`: `a packed Korean professional baseball (KBO) stadium at night, Korean fans filling the tiered stands, tall floodlight towers casting cool white light, deep navy night sky, green grass and reddish-brown infield dirt, faint haze, no real team logos`
-- `[CORRIDOR]`: `the stadium's underground players' corridor, polished dark concrete floor reflecting light, dark walnut wood wall panels, warm amber wall sconces at regular intervals, framed team jerseys and a softly lit trophy cabinet, low ceiling with recessed lights`
+- `[UNIFORM]` (삼성 라이온즈 느낌, 실제 로고·글자 없음): `Korean players in white home uniforms with royal blue trim, royal blue piping down the pants, royal blue undershirts and royal blue caps, no lettering, no numbers, no real team logos`
+- `[CORRIDOR]` (현대적 인테리어): `a modern stadium players' corridor, sleek matte charcoal walls with vertical white LED light strips, polished concrete floor reflecting light, frosted glass panels, thin royal blue accent lines, recessed linear ceiling lights, clean and minimal`
 - `[DOOR]`: `a pair of tall, heavy dark-walnut double doors meeting exactly in the center, long vertical matte-black bar handles on each door, brass hinges`
 - `[STYLE]` (S01 색감 기준): `A single frame from a finished, color-graded feature film, photorealistic, anamorphic lens, 16:9, natural film grain, subtle motion blur, deep navy and teal night tones with warm amber accents, elegant. No text, no watermark, no border, not an illustration.`
 
