@@ -26,7 +26,7 @@ SCENES = [
      "Rear view, camera directly behind him at shoulder height, following him: [GROOM], wearing [OUTFIT], walking past the dugout rail toward the dugout entrance. Without turning his head, still looking straight ahead, he casually extends his right fist to the side and lightly bumps fists with a smiling player leaning over the rail on his left. We see only the back of his head, his shoulders and his back. [UNIFORM], other players at the rail clapping in soft focus. [STADIUM]. Handheld 35mm, slight natural shake, slight motion blur on the legs. [STYLE]"),
     ("S04", 11, 13, "더그아웃 계단을 내려가, 더그아웃 안쪽 벽의 복도 입구로 들어가는 뒷모습. 뒤에서 경기장 빛이 역광으로 비추고, 앞쪽 복도에서 흰 LED 빛이 새어 나옴",
      "없음", "함성이 먹먹하게 멀어짐", "01 c06 어두운 공간으로 긴장 전환 / 03 c02 뒷모습 팔로우",
-     ["01/c06", "03/c02"], "여기까지 핸드헬드 팔로잉, 다음 컷부터 정돈된 컷 전환으로 리듬 바뀜",
+     ["01/c06", "03/c02"], "✅ AI 이미지 확정(대칭 와이드 — S01과 짝). 복도 인테리어 기준 컷. 선수 운동화의 작은 로고는 그대로 둠. 다음 컷부터 정돈된 컷 전환으로 리듬 바뀜",
      "Rear view, camera directly behind him at shoulder height, following him: [GROOM], wearing [OUTFIT], walking down a few concrete steps from the field into the sunken, roofed dugout below field level and heading toward an open doorway in the back wall of the dugout. We see only the back of his head, his shoulders and his back. A few [UNIFORM], standing by the dugout bench on both sides, clapping, in soft focus. [STADIUM]. Behind the camera, the bright floodlit field casts strong backlight and rim light on his shoulders. Through the doorway ahead, cool white light glows from [CORRIDOR]. Handheld 35mm, slight natural shake, slight motion blur. [STYLE]"),
     ("S05", 13, 15, "걷는 구두 발끝 클로즈업. 바닥 가까이 낮은 앵글로 트래킹",
      "없음", "구두 발소리 또렷하게", "01 c01 / 02 c06 발 클로즈업 훅",
