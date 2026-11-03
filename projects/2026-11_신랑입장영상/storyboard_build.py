@@ -70,12 +70,12 @@ SCENES = [
      "(생성 불필요 — 편집에서 순백 화면으로 처리)"),
     ("W1", 33, 36, "화이트가 걷히며 밤 야구장 상공이 드러남. 첫 불꽃이 양옆에서 터짐 (1회 재생)",
      "없음", "음악 계속 + 불꽃 소리", "02 c11 클라이맥스 뒤 감속 구간",
-     ["02/c11"], "정중앙은 비워 둠",
+     ["02/c11"], "✅ AI 이미지 확정(외야 쪽에서 본 대칭 구장). 편집에서 S14 하얀 화면 → 이 이미지로 디졸브. 정중앙 하늘은 비어 있음",
      "The pure white light is fading away like mist clearing, revealing [STADIUM] seen from high above and behind home plate, soft white haze still veiling the edges of the frame. The first gold and white fireworks burst at the far left and far right above the stands, the crowd waving blue and white cheering towels. The center of the frame is kept empty and dark. Slow aerial drone view, 24mm wide. [STYLE]"),
     ("W2", 36, 56, "대기 화면(20초 루프): 밤 경기장 위로 금색·흰색 불꽃이 좌우에서 천천히 터지고 종이 가루가 내려옴. 좌우 대칭, 정중앙 비움",
      "없음", "음악 계속", "03 c16 / 02 c12 갈라져도 예쁜 대기 화면",
      ["03/c16", "02/c12"], "처음과 끝 화면이 같게 만들어 이음매 없이 반복. 문이 열린 양쪽에 각각 그림이 보여야 함",
-     "[STADIUM], seen from high above the field, restrained gold and white fireworks bursting symmetrically on the left and right sides, gold confetti slowly drifting down, center of frame kept empty, calm and elegant. 24mm wide. [STYLE]"),
+     "The same view a few seconds later: [STADIUM] seen from high above the outfield looking toward home plate, perfectly symmetrical. Restrained gold and white fireworks burst symmetrically above the stands on the far left and far right, and gold confetti drifts slowly down through the floodlight beams over the field. The crowd waves blue and white cheering towels. The sky in the center of the frame stays empty and dark. Calm and elegant, made to loop seamlessly. 24mm wide. [STYLE]"),
 ]
 
 COLS = ["씬", "시간", "AI 이미지", "화면 설명", "자막·카피", "오디오", "참고 패턴 (영상 번호·컷)", "참고 컷", "메모", "AI 프롬프트"]
