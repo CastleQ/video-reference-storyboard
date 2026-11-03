@@ -35,7 +35,7 @@ SCENES = [
     ("S06", 15, 18, "복도 측면 풀샷. 카메라는 고정, 인물이 왼쪽에서 프레임 인 → 오른쪽으로 프레임 아웃. 벽에 구단 엠블럼·트로피 진열장",
      "없음", "빌드업", "01 c03 공간으로 무게감 주기 (측면 구도로 비틂)",
      ["01/c03"], "프레임 아웃 후 빈 복도 0.5초 남기기",
-     "Static locked-off wide rear three-quarter view of [CORRIDOR]: [GROOM], wearing [OUTFIT], walking away diagonally from frame left toward frame right, mid-stride with slight motion blur, we see his back and the back of his head. 32mm. [STYLE]"),
+     "Static locked-off wide shot from a fixed camera near the corridor wall, rear three-quarter view: [GROOM], wearing [OUTFIT], crossing the frame from left to right while walking away from the camera, mid-stride with slight motion blur. We see only his back and the back of his head. [CORRIDOR]. 32mm. [STYLE]"),
     ("S07", 18, 20, "복도 정면 대칭 와이드. 긴 복도 끝에 두껍고 무거운 문, 신랑이 작게 걸어감(뒷모습)",
      "없음", "빌드업", "01 c03 대칭 와이드 + 문",
      ["01/c03", "user/u02"], "문은 실제 예식장 문처럼 가운데가 갈라지는 양문",
