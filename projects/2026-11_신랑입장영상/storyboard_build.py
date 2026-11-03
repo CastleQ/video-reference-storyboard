@@ -12,14 +12,14 @@ F = "analysis/frames/"
 
 # (씬, 시작, 끝, 화면 설명, 자막·카피, 오디오, 참고 패턴, 참고 컷[], 메모, AI 프롬프트)
 SCENES = [
-    ("S01", 0, 4, "밤 야구장. 관중이 가득 찬 스탠드와 조명탑 아래, 마운드 위를 걸어가는 신랑의 뒷모습. 카메라가 등 뒤에서 자연스러운 핸드헬드로 따라감 (허리~머리 높이)",
-     "없음", "음악 도입(잔잔) + 관중 함성 앰비언스", "03 c02 뒷모습 팔로우 / 01 c02 얼굴 숨긴 걷기",
-     ["03/c02", "01/c02"], "첫 컷부터 얼굴 숨김. 관중 플래시가 반짝여 '무대에 선 남자' 느낌",
-     "[OUTFIT], walking away from camera across the pitcher's mound of [STADIUM], camera following close behind at shoulder height, handheld 24mm wide lens with slight natural shake, crowd camera flashes sparkling in the stands, floodlight lens flare, [STYLE]"),
-    ("S02", 4, 8, "마운드에서 내려와 더그아웃 쪽으로 뚜벅뚜벅 걸어감. 계속 등 뒤 팔로잉, 앞쪽에 더그아웃과 선수들이 점점 가까워짐",
-     "없음", "관중 함성 + 발소리", "01 c02 걷기로 존재감 쌓기",
-     ["01/c02"], "속도는 여유 있게. 서두르지 않는 걸음",
-     "[OUTFIT], seen from behind, stepping down off the pitcher's mound and walking steadily toward the dugout of [STADIUM], players in white home uniforms waiting at the dugout rail ahead, handheld 35mm follow shot, slight motion blur on the legs, [STYLE]"),
+    ("S01", 0, 4, "마운드에서 출발하는 신랑의 뒷모습 와이드. 낮은 앵글·좌우 대칭(조명탑이 양옆), 관중석 플래시. 카메라는 거의 고정, 아주 느리게 다가감",
+     "없음", "음악 도입(잔잔) + 관중 함성 앰비언스", "03 c02 뒷모습 / 01 c03 대칭 와이드로 공간·무게감",
+     ["03/c02", "01/c03"], "✅ AI 이미지 확정. 이후 모든 씬의 색감·조명 기준 컷(참고 이미지로 함께 넣기)",
+     "low-angle symmetrical wide shot from behind, [OUTFIT], walking away from camera off the pitcher's mound of [STADIUM], two floodlight towers framing the left and right of the frame, crowd camera flashes sparkling in the stands, players lined up at both dugout rails, camera nearly static with a very slow push-in, 24mm wide lens, floodlight lens flare, [STYLE]"),
+    ("S02", 4, 8, "컷이 바뀌면 이미 3루 쪽 더그아웃 근처. 파울라인을 따라 비스듬히 걸어가는 뒷모습을 등 뒤 어깨 높이에서 핸드헬드로 따라감. 앞쪽 더그아웃 난간의 선수들이 그를 향해 돌아섬",
+     "없음", "관중 함성 + 발소리", "01 c02 걷기로 존재감 쌓기 / 03 c02 뒷모습 팔로우",
+     ["01/c02", "03/c02"], "S01→S02는 컷으로 이동 거리를 건너뜀(마운드~더그아웃 약 25~30m). S01 이미지를 참고 이미지로 함께 넣기",
+     "[OUTFIT], seen from behind and slightly to the side, walking along the third-base foul line just a few steps from the dugout of [STADIUM], players in white home uniforms lined up at the dugout rail ahead turning toward him, camera following close behind at shoulder height, handheld 35mm with slight natural shake, slight motion blur on the legs, [STYLE]"),
     ("S03", 8, 11, "더그아웃 앞 선수들이 환호하며 손을 내밂. 신랑이 여유 있게 주먹 인사로 답함. 오버숄더(신랑 어깨 너머)로 선수들만 보이고 신랑 얼굴은 안 보임",
      "없음", "0:08 음악 빌드업 시작 + 선수들 환호", "03 c10 '배우' 같은 캐릭터 포즈",
      ["03/c10"], "음악이 커지는 0:08에 주먹 인사를 맞추면 좋음",
@@ -82,7 +82,20 @@ SCENES = [
      "a packed professional baseball stadium at night seen from high above the field, tiered stands full of spectators, tall floodlight towers casting cool white light from high left and right, deep navy night sky, green outfield grass and reddish-brown infield dirt, faint haze in the air, restrained gold and white fireworks bursting symmetrically on the left and right sides, gold confetti slowly drifting down, center of frame kept empty, calm and elegant, 24mm wide, a single frame captured from a finished, color-graded feature film, photorealistic, shot on ARRI Alexa with anamorphic lenses, 16:9 widescreen, natural film grain, restrained navy and violet color grade with warm amber accents, elegant luxurious mood, no text, no watermark, no border, no collage, not an illustration, not a storyboard sketch"),
 ]
 
-COLS = ["씬", "시간", "화면 설명", "자막·카피", "오디오", "참고 패턴 (영상 번호·컷)", "참고 컷", "메모", "AI 프롬프트"]
+COLS = ["씬", "시간", "AI 이미지", "화면 설명", "자막·카피", "오디오", "참고 패턴 (영상 번호·컷)", "참고 컷", "메모", "AI 프롬프트"]
+
+
+def ai_img(sc):  # ai/S01.jpg 처럼 확정된 AI 이미지가 있으면 경로, 없으면 None
+    p = f"ai/{sc}.jpg"
+    return p if os.path.exists(os.path.join(HERE, p)) else None
+
+
+def put_img(ws, path, col, row, k, h):  # 이미지를 셀 안에 세로로 k번째 위치에 놓는다
+    img = XLImage(os.path.join(HERE, path))
+    img.width, img.height = int(img.width * h / img.height), h
+    img.anchor = OneCellAnchor(_from=AnchorMarker(col=col, row=row - 1, colOff=pixels_to_EMU(4), rowOff=pixels_to_EMU(4 + (h + 6) * k)),
+                               ext=XDRPositiveSize2D(pixels_to_EMU(img.width), pixels_to_EMU(img.height)))
+    ws.add_image(img)
 
 
 def t(s):
@@ -99,14 +112,15 @@ def build_md():
         "- 본편 **0:00~0:33 (33초)**, 문 열림 신호 = S13~S14 (0:28~0:32). 이어서 대기 화면 W1(1회) + **W2 20초 루프**",
         "- 16:9 mp4 / 소스 전부 생성형 AI / 신랑 얼굴 끝까지 숨김",
         "- AI 프롬프트의 `[OUTFIT]`·`[STADIUM]`·`[CORRIDOR]`·`[DOOR]`·`[STYLE]`은 `brief.md`의 공통 문구로 바꿔 넣는다 (장소·의상을 바꿀 때는 brief의 해당 문구만 수정)",
-        "- 참고 컷의 `user/`는 사용자가 보낸 참고 이미지, `01·02·03/`은 레퍼런스 캡처",
+        "- **AI 이미지** 열은 확정된 생성 이미지(`ai/씬번호.jpg`). 참고 컷의 `user/`는 사용자가 보낸 참고 이미지, `01·02·03/`은 레퍼런스 캡처",
         "",
         "| " + " | ".join(COLS) + " |",
         "|" + "---|" * len(COLS),
     ]
     for sc, s, e, desc, cap, audio, pat, refs, memo, prompt in SCENES:
         imgs = " ".join(f'<img src="{F}{r}.jpg" width="140">' for r in refs)
-        row = [f"**{sc}**", f"{t(s)}–{t(e)}<br>({e - s:g}초)", desc, cap, audio, pat, imgs, memo, f"`{prompt}`"]
+        ai = ai_img(sc)
+        row = [f"**{sc}**", f"{t(s)}–{t(e)}<br>({e - s:g}초)", f'<img src="{ai}" width="240">' if ai else "", desc, cap, audio, pat, imgs, memo, f"`{prompt}`"]
         lines.append("| " + " | ".join(row) + " |")
     open(os.path.join(HERE, "storyboard.md"), "w").write("\n".join(lines) + "\n")
 
@@ -120,21 +134,19 @@ def build_xlsx():
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = PatternFill("solid", fgColor="1F2A44")
         c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    widths = [7, 12, 40, 10, 22, 26, 24, 28, 55]
+    widths = [7, 12, 32, 40, 10, 22, 26, 24, 28, 55]
     for i, w in enumerate(widths):
         ws.column_dimensions[chr(65 + i)].width = w
     for r, (sc, s, e, desc, cap, audio, pat, refs, memo, prompt) in enumerate(SCENES, start=2):
-        ws.append([sc, f"{t(s)}–{t(e)}\n({e - s:g}초)", desc, cap, audio, pat, "", memo, prompt])
-        ws.row_dimensions[r].height = max((82 * len(refs) + 8) * 0.75, 110)  # 포인트 단위
+        ws.append([sc, f"{t(s)}–{t(e)}\n({e - s:g}초)", "", desc, cap, audio, pat, "", memo, prompt])
+        ws.row_dimensions[r].height = max((82 * len(refs) + 8) * 0.75, 110, 140 if ai_img(sc) else 0)  # 포인트 단위
         for c in ws[r]:
             c.alignment = Alignment(vertical="top", wrap_text=True)
-        for k, ref in enumerate(refs):  # 참고 컷을 G열 셀 안에 세로로 쌓는다
-            img = XLImage(os.path.join(HERE, F + ref + ".jpg"))
-            img.width, img.height = int(img.width * 76 / img.height), 76
-            img.anchor = OneCellAnchor(_from=AnchorMarker(col=6, row=r - 1, colOff=pixels_to_EMU(4), rowOff=pixels_to_EMU(4 + 82 * k)),
-                                       ext=XDRPositiveSize2D(pixels_to_EMU(img.width), pixels_to_EMU(img.height)))
-            ws.add_image(img)
-    ws.freeze_panes = "C2"
+        if ai_img(sc):
+            put_img(ws, ai_img(sc), 2, r, 0, 124)
+        for k, ref in enumerate(refs):  # 참고 컷은 H열
+            put_img(ws, F + ref + ".jpg", 7, r, k, 76)
+    ws.freeze_panes = "D2"
     wb.save(os.path.join(HERE, "storyboard.xlsx"))
 
 
