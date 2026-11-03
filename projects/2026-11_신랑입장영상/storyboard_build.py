@@ -39,7 +39,7 @@ SCENES = [
     ("S07", 18, 20, "복도 정면 대칭 와이드. 화면 정중앙에 작은 **검은 실루엣**으로 걸어가는 신랑, 복도 끝 한가운데 검정 금속 문(문틈·문 아래로 희미한 흰 빛이 역광)",
      "없음", "빌드업", "01 c03 대칭 와이드 + 문",
      ["01/c03", "user/u02"], "문은 실제 예식장 문처럼 가운데가 갈라지는 양문",
-     "Symmetrical one-point-perspective wide rear view, camera on the center line of the corridor behind him. At the far end, centered: [DOOR], with a faint thin line of white light glowing along the center seam and under the door. [GROOM], wearing [OUTFIT], small in frame, walking away from the camera toward the door exactly in the center of the frame, seen as a pure dark silhouette against the faint glow and the bright LED strips, no visible details on his figure. [CORRIDOR], the corridor lights dimmed so the figure stays dark. 40mm. [STYLE]"),
+     "Perfectly centered symmetrical one-point-perspective wide rear view, camera on the center line of the corridor behind him. At the far end, centered: [DOOR]. Bright white light leaks through the thin center seam and under the door, spilling across the polished floor toward the camera. [GROOM], wearing [OUTFIT], small in frame, walking away from the camera, his body aligned exactly with the door's center seam so the vertical line of light runs directly behind him, seen as a pure dark silhouette. On both sides, tall walls of bright white LED light act as strong rim backlight, faint haze in the air catching the light, deep contrast, the rest of [CORRIDOR] falling into darkness. 40mm. [STYLE]"),
     ("S08", 20, 22, "문 앞에 멈춰 선 뒷모습 미디엄샷. 문틈 아래로 희미한 빛",
      "없음", "빌드업 고조", "01 c06 '곧 이 문이 열린다'",
      ["01/c06", "user/u02"], "",
