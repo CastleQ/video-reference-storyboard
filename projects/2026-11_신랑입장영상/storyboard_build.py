@@ -74,7 +74,7 @@ SCENES = [
      "The pure white light is fading away like mist clearing, revealing [STADIUM] seen from high above and behind home plate, soft white haze still veiling the edges of the frame. The first gold and white fireworks burst at the far left and far right above the stands, the crowd waving blue and white cheering towels. The center of the frame is kept empty and dark. Slow aerial drone view, 24mm wide. [STYLE]"),
     ("W2", 36, 56, "대기 화면(20초 루프): 밤 경기장 위로 금색·흰색 불꽃이 좌우에서 천천히 터지고 종이 가루가 내려옴. 좌우 대칭, 정중앙 비움",
      "없음", "음악 계속", "03 c16 / 02 c12 갈라져도 예쁜 대기 화면",
-     ["03/c16", "02/c12"], "처음과 끝 화면이 같게 만들어 이음매 없이 반복. 문이 열린 양쪽에 각각 그림이 보여야 함",
+     ["03/c16", "02/c12"], "✅ AI 이미지 확정(불꽃·종이 가루 강화, W1과 같은 시점). 처음과 끝 화면이 같게 만들어 이음매 없이 반복. 큰 불꽃은 좌우, 정중앙 하늘은 종이 가루만",
      "The same view a few seconds later: [STADIUM] seen from high above the outfield looking toward home plate, perfectly symmetrical. Restrained gold and white fireworks burst symmetrically above the stands on the far left and far right, and gold confetti drifts slowly down through the floodlight beams over the field. The crowd waves blue and white cheering towels. The sky in the center of the frame stays empty and dark. Calm and elegant, made to loop seamlessly. 24mm wide. [STYLE]"),
 ]
 
