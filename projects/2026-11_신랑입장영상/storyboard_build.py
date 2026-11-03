@@ -31,7 +31,7 @@ SCENES = [
     ("S05", 13, 15, "걷는 구두 발끝 클로즈업. 바닥 가까이 낮은 앵글로 트래킹",
      "없음", "구두 발소리 또렷하게", "01 c01 / 02 c06 발 클로즈업 훅",
      ["01/c01", "02/c06"], "",
-     "floor-level low-angle tracking close-up of polished black lace-up shoes and black suit trouser hems striding along [CORRIDOR], reflections on the floor, 50mm shallow depth of field, motion blur on the stepping foot, [STYLE]"),
+     "Floor-level low-angle tracking close-up, camera gliding just above the floor beside his feet: polished black lace-up shoes and the hems of black suit trousers striding forward along [CORRIDOR]. The vertical LED light strips reflect on the polished floor and on the shoes, the corridor behind falls into soft blur. 50mm, shallow depth of field, motion blur on the stepping foot. [STYLE]"),
     ("S06", 15, 18, "복도 측면 풀샷. 카메라는 고정, 인물이 왼쪽에서 프레임 인 → 오른쪽으로 프레임 아웃. 벽에 구단 엠블럼·트로피 진열장",
      "없음", "빌드업", "01 c03 공간으로 무게감 주기 (측면 구도로 비틂)",
      ["01/c03"], "프레임 아웃 후 빈 복도 0.5초 남기기",
