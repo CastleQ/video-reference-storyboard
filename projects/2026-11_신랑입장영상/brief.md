@@ -34,7 +34,7 @@
 - `[STADIUM]`: `a packed Korean professional baseball (KBO) stadium at night, Korean fans filling the tiered stands, tall floodlight towers casting cool white light, deep navy night sky, green grass and reddish-brown infield dirt, faint haze, no real team logos`
 - `[UNIFORM]` (삼성 라이온즈 느낌, 실제 로고·글자 없음): `Korean players in white home uniforms with royal blue trim, royal blue piping down the pants, royal blue undershirts and royal blue caps, no lettering, no numbers, no real team logos`
 - `[CORRIDOR]` (현대적 인테리어): `a modern stadium players' corridor, sleek matte charcoal walls with vertical white LED light strips, polished concrete floor reflecting light, frosted glass panels, thin royal blue accent lines, recessed linear ceiling lights, clean and minimal`
-- `[DOOR]` (무광 검정 금속): `a pair of tall, heavy matte black metal double doors meeting exactly in the center, long vertical brushed-steel bar handles on each door, flush minimal design`
+- `[DOOR]` (무광 검정 금속, **문은 하나**·가운데서 두 짝으로 갈라짐): `one single doorway with a tall, heavy two-leaf matte black metal door that splits exactly in the center, one long vertical brushed-steel bar handle on each leaf, flush minimal design`
 - `[STYLE]` (S01 색감 기준): `A single frame from a finished, color-graded feature film, photorealistic, anamorphic lens, 16:9, natural film grain, subtle motion blur, deep navy and teal night tones with warm amber accents, elegant. No text, no watermark, no border, not an illustration.`
 
 **프롬프트 작성 원칙 (S01·S02에서 확인):** ① 시점(뒷모습·카메라 위치)을 **맨 앞에** 긍정문으로 쓴다 ② "얼굴 안 보이게" 같은 부정문은 쓰지 않는다(오히려 얼굴을 끌어냄) ③ 인물은 `[GROOM]`으로 한국인 고정 ④ 직전에 확정한 씬 이미지를 "같은 영화의 앞 장면 — 같은 남자·구장·색감 유지"로 참고시킨다
