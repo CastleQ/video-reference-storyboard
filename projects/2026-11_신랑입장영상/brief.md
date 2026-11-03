@@ -27,5 +27,6 @@
 ## AI 프롬프트 공통 문구
 스토리보드의 프롬프트는 아래 두 문구를 `[OUTFIT]`, `[STYLE]` 자리에 그대로 넣어 씁니다. **본식 의상 사진을 받으면 `[OUTFIT]` 한 줄만 고치면 됩니다.** 이미지를 만들 때는 의상 사진을 AI 도구에 참고 이미지로 함께 넣어 주세요.
 
-- `[OUTFIT]` (임시): `a groom in a classic black tuxedo with satin peak lapels, white dress shirt, black bow tie, polished black oxford shoes`
+- `[OUTFIT]` (본식 의상 확정): `a groom in a black three-piece suit with notch lapels and a matching black vest, crisp white dress shirt, black bow tie, a white flower boutonniere on the left lapel, polished black lace-up shoes`
+- 의상 참고 사진: `analysis/frames/user/u06.jpg`, `u07.jpg` → 이미지를 만들 때 AI 도구에 참고 이미지로 함께 넣는다 (얼굴은 쓰지 않고 옷만 참고)
 - `[STYLE]`: `cinematic film still, 16:9, anamorphic lens, shallow depth of field, soft film grain, restrained navy and violet color grade, elegant and luxurious mood, face never visible`
