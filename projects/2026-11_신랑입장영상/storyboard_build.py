@@ -54,7 +54,7 @@ SCENES = [
      "close-up of hands buttoning a black suit jacket over a matching black vest, white boutonniere on the lapel, framed from chest to waist, face out of frame, [OUTFIT], [STYLE]"),
     ("S11", 25, 26.5, "보타이를 바로잡고, 손이 내려와 가슴의 흰 꽃 코사지를 살짝 매만지는 클로즈업 (턱 아래까지만)",
      "없음", "빌드업 고조", "01 c04~c05 디테일 연속",
-     ["01/c05", "user/u06"], "본식 의상 확정: 보타이 + 흰 코사지. 코사지가 돋보이는 유일한 컷이라 초점을 코사지에",
+     ["01/c05"], "본식 의상 확정: 보타이 + 흰 코사지. 코사지가 돋보이는 유일한 컷이라 초점을 코사지에",
      "close-up of fingers straightening a black bow tie, then lightly touching a white flower boutonniere on the black suit lapel, framed below the chin, face not visible, shallow focus on the boutonniere, [OUTFIT], [STYLE]"),
     ("S12", 26.5, 28, "양손이 문 손잡이를 동시에 잡는 클로즈업",
      "없음", "빌드업 최고조", "01 c07 화면 속 문 → 실제 문 복선",
