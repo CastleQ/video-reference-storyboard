@@ -30,7 +30,7 @@ SCENES = [
      "Rear view, camera directly behind him at shoulder height, following him: [GROOM], wearing [OUTFIT], walking down a few concrete steps from the field into the sunken, roofed dugout below field level and heading toward an open doorway in the back wall of the dugout. We see only the back of his head, his shoulders and his back. A few [UNIFORM], standing by the dugout bench on both sides, clapping, in soft focus. [STADIUM]. Behind the camera, the bright floodlit field casts strong backlight and rim light on his shoulders. Through the doorway ahead, cool white light glows from [CORRIDOR]. Handheld 35mm, slight natural shake, slight motion blur. [STYLE]"),
     ("S05", 13, 15, "걷는 구두 발끝 클로즈업. 바닥 가까이 낮은 앵글로 트래킹",
      "없음", "구두 발소리 또렷하게", "01 c01 / 02 c06 발 클로즈업 훅",
-     ["01/c01", "02/c06"], "",
+     ["01/c01", "02/c06"], "✅ AI 이미지 확정. 카메라가 앞에서 뒤로 빠지며 발을 따라가는 구도(방향 전환으로 리듬 변화)",
      "Floor-level low-angle tracking close-up, camera gliding just above the floor beside his feet: polished black lace-up shoes and the hems of black suit trousers striding forward along [CORRIDOR]. The vertical LED light strips reflect on the polished floor and on the shoes, the corridor behind falls into soft blur. 50mm, shallow depth of field, motion blur on the stepping foot. [STYLE]"),
     ("S06", 15, 18, "복도 측면 풀샷. 카메라는 고정, 인물이 왼쪽에서 프레임 인 → 오른쪽으로 프레임 아웃. 벽에 구단 엠블럼·트로피 진열장",
      "없음", "빌드업", "01 c03 공간으로 무게감 주기 (측면 구도로 비틂)",
