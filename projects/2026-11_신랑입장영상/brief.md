@@ -29,8 +29,11 @@
 
 **균일하게 뽑는 요령:** ① S01을 먼저 만들어 마음에 드는 1장을 고른 뒤, 이후 모든 씬에 그 이미지를 참고 이미지로 함께 넣기 ② 의상 사진(`analysis/frames/user/u06.jpg`, `u07.jpg`)도 매번 참고 이미지로 넣기(옷만 참고) ③ 처음부터 끝까지 같은 도구·같은 모델 ④ 비율은 도구 설정에서 16:9로 고정
 
-- `[OUTFIT]` (본식 의상 확정): `a groom in a black three-piece suit with notch lapels and a matching black vest, crisp white dress shirt, black bow tie, a white flower boutonniere on the left lapel, polished black lace-up shoes`
-- `[STADIUM]`: `a packed professional baseball stadium at night, tiered stands full of spectators, tall floodlight towers casting cool white light from high left and right, deep navy night sky, green outfield grass and reddish-brown infield dirt, faint haze in the air`
+- `[GROOM]` (인물 고정): `a Korean man in his early 30s with short, neat dark brown hair and a slim build`
+- `[OUTFIT]` (본식 의상 확정): `a black three-piece suit with notch lapels and a matching black vest, crisp white dress shirt, black bow tie, a white flower boutonniere on the left lapel, polished black lace-up shoes`
+- `[STADIUM]`: `a packed Korean professional baseball (KBO) stadium at night, Korean fans filling the tiered stands, tall floodlight towers casting cool white light, deep navy night sky, green grass and reddish-brown infield dirt, faint haze, no real team logos`
 - `[CORRIDOR]`: `the stadium's underground players' corridor, polished dark concrete floor reflecting light, dark walnut wood wall panels, warm amber wall sconces at regular intervals, framed team jerseys and a softly lit trophy cabinet, low ceiling with recessed lights`
 - `[DOOR]`: `a pair of tall, heavy dark-walnut double doors meeting exactly in the center, long vertical matte-black bar handles on each door, brass hinges`
-- `[STYLE]`: `a single frame captured from a finished, color-graded feature film, photorealistic, shot on ARRI Alexa with anamorphic lenses, 16:9 widescreen, natural film grain, subtle motion blur, restrained navy and violet color grade with warm amber accents, elegant luxurious mood, the groom's face is never visible, no text, no watermark, no border, no collage, not an illustration, not a storyboard sketch`
+- `[STYLE]` (S01 색감 기준): `A single frame from a finished, color-graded feature film, photorealistic, anamorphic lens, 16:9, natural film grain, subtle motion blur, deep navy and teal night tones with warm amber accents, elegant. No text, no watermark, no border, not an illustration.`
+
+**프롬프트 작성 원칙 (S01·S02에서 확인):** ① 시점(뒷모습·카메라 위치)을 **맨 앞에** 긍정문으로 쓴다 ② "얼굴 안 보이게" 같은 부정문은 쓰지 않는다(오히려 얼굴을 끌어냄) ③ 인물은 `[GROOM]`으로 한국인 고정 ④ 직전에 확정한 씬 이미지를 "같은 영화의 앞 장면 — 같은 남자·구장·색감 유지"로 참고시킨다
