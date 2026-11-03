@@ -25,8 +25,12 @@
   - 리허설 상영 가능 여부
 
 ## AI 프롬프트 공통 문구
-스토리보드의 프롬프트는 아래 두 문구를 `[OUTFIT]`, `[STYLE]` 자리에 그대로 넣어 씁니다. **본식 의상 사진을 받으면 `[OUTFIT]` 한 줄만 고치면 됩니다.** 이미지를 만들 때는 의상 사진을 AI 도구에 참고 이미지로 함께 넣어 주세요.
+스토리보드 프롬프트의 `[ ]` 자리에 아래 문구를 그대로 넣어 씁니다. 컷이 바뀌어도 **같은 옷·같은 장소·같은 영화의 한 장면**처럼 보이게 하는 장치예요. 바꿀 때는 여기 한 줄만 고치면 됩니다.
+
+**균일하게 뽑는 요령:** ① S01을 먼저 만들어 마음에 드는 1장을 고른 뒤, 이후 모든 씬에 그 이미지를 참고 이미지로 함께 넣기 ② 의상 사진(`analysis/frames/user/u06.jpg`, `u07.jpg`)도 매번 참고 이미지로 넣기(옷만 참고) ③ 처음부터 끝까지 같은 도구·같은 모델 ④ 비율은 도구 설정에서 16:9로 고정
 
 - `[OUTFIT]` (본식 의상 확정): `a groom in a black three-piece suit with notch lapels and a matching black vest, crisp white dress shirt, black bow tie, a white flower boutonniere on the left lapel, polished black lace-up shoes`
-- 의상 참고 사진: `analysis/frames/user/u06.jpg`, `u07.jpg` → 이미지를 만들 때 AI 도구에 참고 이미지로 함께 넣는다 (얼굴은 쓰지 않고 옷만 참고)
-- `[STYLE]`: `cinematic film still, 16:9, anamorphic lens, shallow depth of field, soft film grain, restrained navy and violet color grade, elegant and luxurious mood, face never visible`
+- `[STADIUM]`: `a packed professional baseball stadium at night, tiered stands full of spectators, tall floodlight towers casting cool white light from high left and right, deep navy night sky, green outfield grass and reddish-brown infield dirt, faint haze in the air`
+- `[CORRIDOR]`: `the stadium's underground players' corridor, polished dark concrete floor reflecting light, dark walnut wood wall panels, warm amber wall sconces at regular intervals, framed team jerseys and a softly lit trophy cabinet, low ceiling with recessed lights`
+- `[DOOR]`: `a pair of tall, heavy dark-walnut double doors meeting exactly in the center, long vertical matte-black bar handles on each door, brass hinges`
+- `[STYLE]`: `a single frame captured from a finished, color-graded feature film, photorealistic, shot on ARRI Alexa with anamorphic lenses, 16:9 widescreen, natural film grain, subtle motion blur, restrained navy and violet color grade with warm amber accents, elegant luxurious mood, the groom's face is never visible, no text, no watermark, no border, no collage, not an illustration, not a storyboard sketch`
