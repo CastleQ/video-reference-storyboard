@@ -78,7 +78,43 @@ SCENES = [
      "The same view a few seconds later: [STADIUM] seen from high above the outfield looking toward home plate, perfectly symmetrical. Restrained gold and white fireworks burst symmetrically above the stands on the far left and far right, and gold confetti drifts slowly down through the floodlight beams over the field. The crowd waves blue and white cheering towels. The sky in the center of the frame stays empty and dark. Calm and elegant, made to loop seamlessly. 24mm wide. [STYLE]"),
 ]
 
-COLS = ["씬", "시간", "AI 이미지", "화면 설명", "자막·카피", "오디오", "참고 패턴 (영상 번호·컷)", "참고 컷", "메모", "AI 프롬프트"]
+# 영상(움직임) 프롬프트: 씬 → (한국어 설명, 영상 생성용 영문). 확정 AI 이미지를 시작 화면으로 넣고 사용. 클립은 5초로 만들어 편집에서 자른다
+FACE = " He keeps facing away from the camera the whole time; his face never turns toward the camera."
+MOTION = {
+    "S01": ("카메라가 뒤에서 아주 천천히 다가가고, 신랑은 마운드를 걸어 멀어짐. 관중석 플래시가 반짝이고 조명이 번짐",
+            "The camera slowly pushes in from behind as he walks away across the pitcher's mound. Crowd camera flashes twinkle in the stands, floodlight flares shimmer." + FACE + " Steady cinematic movement."),
+    "S02": ("등 뒤 어깨 높이에서 핸드헬드로 따라감. 파울라인을 따라 더그아웃 쪽으로 걷고, 난간의 선수들이 박수를 치기 시작",
+            "Handheld camera follows close behind him at shoulder height as he walks along the foul line toward the dugout. The players at the rail start clapping and cheering." + FACE + " Natural handheld sway."),
+    "S03": ("걸으면서 고개는 정면을 둔 채 손을 뻗어 선수와 가볍게 주먹 인사, 그대로 계속 걸어감",
+            "Handheld follow from behind: while walking, he casually reaches out and lightly bumps fists with the smiling player at the rail, then keeps walking forward. The other players clap." + FACE),
+    "S04": ("뒤에서 따라가며 더그아웃으로 내려서고, 양옆 선수들의 박수 속에 복도 입구로 걸어 들어감",
+            "The camera follows from behind as he steps down into the dugout and walks through the doorway into the bright modern corridor, players clapping on both sides, strong backlight from the field." + FACE),
+    "S05": ("카메라가 발 앞에서 뒤로 물러나며 걷는 구두를 따라감. 바닥의 LED 반사가 흘러감",
+            "Low tracking shot moving backward just ahead of his feet as he strides forward; the polished shoes step toward the camera, LED reflections slide across the floor. Only the feet and trouser hems are in frame."),
+    "S06": ("카메라 고정. 실루엣이 화면 왼쪽에서 오른쪽으로 걸어 나가고, 빈 복도를 0.5초 남김",
+            "Static locked-off camera. His dark silhouette walks from frame left to frame right and exits the frame; hold on the empty glowing corridor for a moment. No facial details visible."),
+    "S07": ("어깨 너머로 닫힌 문을 향해 아주 천천히 다가감. 문틈의 빛이 은은하게 일렁이고 안개가 흐름",
+            "Very slow push-in over his shoulder toward the closed door. The thin line of light in the door seam flickers softly, haze drifting through it. He stays still, his head stays turned toward the door."),
+    "S08": ("고정된 대칭 와이드. 화면 정중앙의 실루엣이 천천히 문을 향해 걸어감 (짧게 2~3초)",
+            "Static symmetrical wide shot. His silhouette walks slowly toward the door in the exact center of the frame, haze drifting in the light from the door seam. No facial details visible."),
+    "S09": ("손가락이 커프스 단추를 돌려 매만짐. 금속에 빛이 반짝",
+            "Extreme close-up: his fingers turn and adjust the cufflink, a small precise movement, the rim light glinting on the metal. Camera almost still."),
+    "S10": ("두 손이 재킷 단추를 잠그고 앞섶을 가볍게 정리. 카메라는 거의 고정, 턱 아래로만",
+            "Close-up framed below the chin: both hands fasten the jacket button and lightly smooth the front of the jacket. Camera almost still, the face never enters the frame."),
+    "S11": ("두 손이 손잡이를 더 꽉 움켜쥐고, 손마디에 힘이 들어가며 문을 열 준비. 문틈 빛이 조금 밝아짐",
+            "Close-up: both hands tighten their grip on the two steel handles, knuckles tensing, a slight push as he prepares to open the door. The light in the door seam grows a little brighter."),
+    "S12": ("낮은 앵글. 두 손으로 문을 밀자 문이 열리기 시작하고, 벌어지는 틈으로 흰 빛이 터져 나와 안개를 가름",
+            "Low-angle rear view: he pushes both door leaves and they begin to swing open; a blade of brilliant white light bursts through the widening gap, rays sweeping through the haze. He stays a dark silhouette." + FACE),
+    "S13": ("두 팔을 활짝 벌려 문을 끝까지 열고, 쏟아지는 흰 빛이 화면을 덮으며 실루엣이 하얗게 녹아듦",
+            "He spreads his arms and pushes the doors fully open; overwhelming white light floods in and fills the frame, his silhouette dissolving into pure white by the end of the shot." + FACE),
+    "S14": ("생성 불필요 — 편집에서 하얀 화면 1초", "(생성 불필요 — 편집에서 순백 화면 처리)"),
+    "W1": ("하늘에서 아주 천천히 앞으로 흐르는 드론 시점. 좌우에서 첫 불꽃이 터지고 관중이 응원 수건을 흔듦 (편집에서 하얀 화면 → 디졸브)",
+           "Very slow aerial drift forward over the stadium. The first fireworks burst at the far left and far right, the crowd waves blue and white towels, smoke drifts. The center of the sky stays empty."),
+    "W2": ("카메라 완전 고정. 좌우 불꽃이 계속 터지고 종이 가루가 끊임없이 내려옴. 처음과 끝 화면을 같게 해 반복 재생",
+           "Seamless loop with a completely static camera: fireworks keep bursting on the left and right, gold confetti keeps falling, the crowd keeps waving. The first and last frames match so the clip loops without a visible cut."),
+}
+
+COLS = ["씬", "시간", "AI 이미지", "화면 설명", "자막·카피", "오디오", "참고 패턴 (영상 번호·컷)", "참고 컷", "메모", "AI 프롬프트", "영상 프롬프트(움직임)"]
 
 
 def ai_img(sc):  # ai/S01.jpg 처럼 확정된 AI 이미지가 있으면 경로, 없으면 None
@@ -116,7 +152,7 @@ def build_md():
     for sc, s, e, desc, cap, audio, pat, refs, memo, prompt in SCENES:
         imgs = " ".join(f'<img src="{F}{r}.jpg" width="140">' for r in refs)
         ai = ai_img(sc)
-        row = [f"**{sc}**", f"{t(s)}–{t(e)}<br>({e - s:g}초)", f'<img src="{ai}" width="240">' if ai else "", desc, cap, audio, pat, imgs, memo, f"`{prompt}`"]
+        row = [f"**{sc}**", f"{t(s)}–{t(e)}<br>({e - s:g}초)", f'<img src="{ai}" width="240">' if ai else "", desc, cap, audio, pat, imgs, memo, f"`{prompt}`", f"{MOTION[sc][0]}<br>`{MOTION[sc][1]}`"]
         lines.append("| " + " | ".join(row) + " |")
     open(os.path.join(HERE, "storyboard.md"), "w").write("\n".join(lines) + "\n")
 
@@ -130,11 +166,11 @@ def build_xlsx():
         c.font = Font(bold=True, color="FFFFFF")
         c.fill = PatternFill("solid", fgColor="1F2A44")
         c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    widths = [7, 12, 32, 40, 10, 22, 26, 24, 28, 55]
+    widths = [7, 12, 32, 40, 10, 22, 26, 24, 28, 55, 55]
     for i, w in enumerate(widths):
         ws.column_dimensions[chr(65 + i)].width = w
     for r, (sc, s, e, desc, cap, audio, pat, refs, memo, prompt) in enumerate(SCENES, start=2):
-        ws.append([sc, f"{t(s)}–{t(e)}\n({e - s:g}초)", "", desc, cap, audio, pat, "", memo, prompt])
+        ws.append([sc, f"{t(s)}–{t(e)}\n({e - s:g}초)", "", desc, cap, audio, pat, "", memo, prompt, MOTION[sc][0] + "\n\n" + MOTION[sc][1]])
         ws.row_dimensions[r].height = max((82 * len(refs) + 8) * 0.75, 110, 140 if ai_img(sc) else 0)  # 포인트 단위
         for c in ws[r]:
             c.alignment = Alignment(vertical="top", wrap_text=True)
@@ -146,7 +182,43 @@ def build_xlsx():
     wb.save(os.path.join(HERE, "storyboard.xlsx"))
 
 
+def build_print_html():
+    # 신랑 측 검토용(한국어·이미지 중심) 인쇄 페이지. PDF 변환: node print_pdf.js
+    import html, re
+    clean = lambda x: html.escape(re.sub(r"\*\*", "", x))
+    cards = []
+    for sc, s, e, desc, cap, audio, pat, refs, memo, prompt in SCENES:
+        ai = ai_img(sc)
+        img = f'<img src="{ai}">' if ai else '<div class="white">하얀 화면</div>'
+        note = '<p class="warn">※ 임시 이미지(참고 사진) — 실제 영상은 검정 금속 문으로 제작</p>' if "임시" in memo else ""
+        cards.append(f'''<section class="card"><div class="pic">{img}</div><div class="txt">
+<h2>{sc}<span>{t(s)}–{t(e)} · {e - s:g}초</span></h2>
+<p><b>화면</b> {clean(desc)}</p><p><b>움직임</b> {clean(MOTION[sc][0])}</p><p><b>소리</b> {clean(audio)}</p>{note}</div></section>''')
+    pages = [cards[i:i + 2] for i in range(0, len(cards), 2)]
+    body = "".join(f'<div class="page">{"".join(p)}</div>' for p in pages)
+    doc = f'''<!doctype html><html lang="ko"><meta charset="utf-8"><title>신랑 입장 영상 스토리보드</title>
+<style>@page{{size:A4 landscape;margin:12mm}}body{{font-family:"Noto Sans KR","WenQuanYi Zen Hei",sans-serif;color:#1d2433;margin:0}}
+.page{{page-break-after:always;display:flex;flex-direction:column;gap:8mm;height:180mm}}
+.cover{{page-break-after:always;height:180mm;display:flex;flex-direction:column;justify-content:center}}
+.cover h1{{font-size:30pt;margin:0 0 4mm}}.cover p{{font-size:12pt;margin:1.5mm 0;color:#4a5468}}
+.flow{{margin-top:8mm;font-size:11pt;line-height:1.7;background:#f2f4f8;padding:5mm 7mm;border-radius:3mm}}
+.card{{display:flex;gap:7mm;height:86mm;border-bottom:0.3mm solid #d5dae3;padding-bottom:4mm}}
+.pic{{flex:0 0 150mm}}.pic img,.white{{width:150mm;height:84.4mm;object-fit:cover;border-radius:2mm;display:block}}
+.white{{background:#fff;border:0.3mm solid #c8ceda;display:flex;align-items:center;justify-content:center;color:#8a93a6}}
+.txt{{font-size:10.5pt;line-height:1.55}}.txt h2{{font-size:17pt;margin:0 0 2mm}}.txt h2 span{{font-size:10pt;color:#6b7488;margin-left:3mm;font-weight:400}}
+.txt p{{margin:0 0 2mm}}.txt b{{color:#2f5bd3;margin-right:2mm}}.warn{{color:#b45309}}</style>
+<div class="cover"><h1>신랑 입장 영상 스토리보드</h1>
+<p>본편 33초 (0:30 무렵 실제 문이 열림) + 문이 열린 뒤 대기 화면 20초 반복</p>
+<p>16:9 · 예식장 스크린 상영용 · 신랑 얼굴은 끝까지 보이지 않음</p>
+<p>음악(참고): 이원석 「큐사인」 — 0:30에 음악이 터지는 지점에 맞춰 문이 열림</p>
+<div class="flow">① 관중이 가득한 밤 야구장, 마운드를 걷는 뒷모습 (0:00–0:08)<br>② 선수들과 주먹 인사, 더그아웃을 지나 선수 복도로 (0:08–0:13)<br>③ 복도를 걸어 문 앞으로 — 구두, 실루엣, 문틈의 빛 (0:13–0:22)<br>④ 커프스·단추를 다듬고 손잡이를 힘껏 쥠 (0:22–0:28)<br>⑤ 문이 열리며 흰 빛 속으로 → 실제 문이 열림 (0:28–0:33)<br>⑥ 불꽃과 종이 가루가 쏟아지는 야구장 대기 화면 반복 (0:33~)</div>
+<p style="margin-top:6mm">이미지는 분위기 확인용 시안이며, 실제 영상에서는 움직임과 세부가 달라질 수 있습니다.</p></div>
+{body}</html>'''
+    open(os.path.join(HERE, "storyboard_print.html"), "w").write(doc)
+
+
 if __name__ == "__main__":
     build_md()
     build_xlsx()
+    build_print_html()
     print("ok")
