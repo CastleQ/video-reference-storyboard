@@ -9,3 +9,4 @@ tmp/
 .DS_Store
 # inbox 영상은 분석용으로만 잠깐 올린다 (GitHub 웹 업로드는 이 규칙과 무관)
 !inbox/.gitkeep
+__pycache__/
