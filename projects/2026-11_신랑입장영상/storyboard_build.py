@@ -47,7 +47,7 @@ SCENES = [
     ("S09", 22, 23.5, "커프스 단추를 만지는 손 익스트림 클로즈업",
      "없음", "빌드업 고조", "01 c04 디테일 '준비 완료'",
      ["01/c04", "user/u04"], "",
-     "extreme macro close-up of a hand adjusting a silver cufflink on a crisp white shirt cuff beneath a black suit sleeve, cool white LED strip highlights from a modern stadium players' corridor, charcoal walls in soft blur, 100mm macro, very shallow depth of field, [STYLE]"),
+     "Extreme macro close-up: the fingers of one hand adjusting a small silver cufflink on a crisp white shirt cuff that peeks out from a black suit sleeve. Dim corridor light, a cool white rim light from the side catching the edge of the cuff and the metal of the cufflink, soft haze, the dark background falling into deep blur. 100mm macro, very shallow depth of field. [STYLE]"),
     ("S10", 23.5, 25, "재킷 단추를 잠그는 손 클로즈업 (가슴~허리, 얼굴 X)",
      "없음", "빌드업 고조", "01 c05 / 02 c05 디테일",
      ["01/c05", "user/u05"], "",
